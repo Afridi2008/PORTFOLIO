@@ -10,7 +10,7 @@
   const el = document.getElementById("hero-name");
   if (!el) return;
 
-  const lines = ["AFRIDI", "MOHAMED", " J"];
+  const lines = ["AFRIDI", "MOHAMED J"];
   const speed = 65;
   let lineIndex = 0;
   let charIndex = 0;
@@ -45,7 +45,7 @@
     }
     const line = lines[lineIndex];
     if (charIndex < line.length) {
-      const isAccent = lineIndex === 2;
+      const isAccent = lineIndex === 1 && charIndex >= "MOHAMED ".length;
       insertChar(line[charIndex], isAccent);
       charIndex++;
       setTimeout(type, speed);
